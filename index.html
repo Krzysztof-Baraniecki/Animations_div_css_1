@@ -6,41 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Animations div css 1</title>
     <style>
-
     body{
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100vw;
         height: 100vh;
-        margin: 0;
     }
 
     .box{
-        background-color: blue;
         position: relative;
-        width: 400px;
-        height: 400px;
+        width: 25rem;
+        height: 25rem;
         border-radius: 50%;
         overflow: hidden;
+        box-shadow: 9px 9px 38px -1px rgba(0,0,0,0.75);
+        margin: 1rem;
     }
 
-    .box2{
+    .box::after{
         content: '';
         position: absolute;
-        width: 10%;
-        height: 10%;
+        width: 50%;
+        height: 50%;
         border-radius: 50%;
+        right: 25%;
+        top: 25%;
+        transform: translate(-150%, 150%);
         transition: all 0.61s;
-        right: 50%;
-        top: 50%;
-        transform: translate(-500%, 500%);
     }
 
-    .box:hover .box2{
-        background-color: rgb(179, 127, 135);
-        transform: translate(0px, 0px) scale(12);
-        opacity: 0.8;
+    .box:hover::after{
+        background-color: rgba(0, 159, 180, 0.433);
+        transform: translate(0px, 0px) scale(2);
     }
 
     .box:hover .text_box{
@@ -53,16 +51,21 @@
         width: 100%;
     }
 
-    .text_box{
+    .text_box {
         position: absolute;
         color: #fff;
-        margin: 80px 40px;
-        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
         text-align: center;
         z-index: 1;
         opacity: 0;
         transition: all .21s;
     }
+
     </style>
 </head>
 <body>
@@ -70,8 +73,7 @@
         <div class="text_box">
                 <h1>Lorem ipsum dolor sit amet</h1>
                 <p>Pellentesque mollis purus sed rhoncus egestas. Sed vel congue eros, a rhoncus urna. Donec quis leo et nibh scelerisque commodo</p>
-            </div>
-        <div class="box2"></div>
+        </div>
         <img src="20180107_130410.jpg" title="" />
     </div>
 </body>
